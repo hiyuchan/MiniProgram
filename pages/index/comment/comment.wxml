@@ -1,0 +1,8 @@
+<!--pages/index/comment/comment.wxml-->
+  <view class="title">
+    <view class="left">
+      <image class="head_img" src="{{commentList.user.profile_image}}"></image>
+      <text class="name">{{commentList.user.username}}</text>
+    </view>
+    <!-- <image class="more" src="../../../imgs/more.png"></image> -->
+  </view>

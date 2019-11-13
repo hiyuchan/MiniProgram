@@ -1,0 +1,14 @@
+<import src="../common/mainTabCell/mainTabCell.wxml"/>
+<view>
+  <view class="main_tab">
+    <view bindtap="tabTap" wx:for="{{tab}}" wx:key="index" data-type="{{item.type}}" data-index="{{index}}"  class="{{index==currentIndex?'tab_item active':'tab_item'}}">{{item.name}}</view>
+  </view>
+<swiper autoplay="{{true}}" circular="{{true}}" interval="1000" indicator-dots="{{true}}">
+  <swiper-item wx:for="{{imgs}}" wx:key="index" bindtap="swiperTap">
+    <image src="{{item.url}}" data-link="http://m.kugou.com/"></image>
+  </swiper-item>
+</swiper>
+<block wx:for="{{list}}" wx:key="index">
+  <template is="mainTabCell" data="{{item:item,commonTap:commonTap}}"></template>
+</block>
+</view>

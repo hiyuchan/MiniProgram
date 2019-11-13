@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/comment/comment",
+    "pages/index/index",
+    "pages/welcome/welcome",
+    "pages/goods/goods",
+    "pages/my/my",
+    "pages/favour/favour",
+    "pages/index/link/link"
+  ],
+  "window": {
+    "navigationBarTitleText": "snail",
+    "navigationBarBackgroundColor": "#0099ff",
+    "backgroundColor": "#b1b1b1",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#bdbdbd",
+    "selectedColor": "#0099ff",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "selectedColor": "#0099ff",
+        "iconPath": "imgs/home.png",
+        "selectedIconPath": "imgs/home_active.png"
+      },
+      {
+        "pagePath": "pages/goods/goods",
+        "text": "关注",
+        "iconPath": "imgs/atten.png",
+        "selectedIconPath": "imgs/atten_active.png"
+      },
+      {
+        "pagePath": "pages/favour/favour",
+        "text": "收藏",
+        "iconPath": "imgs/favour.png",
+        "selectedIconPath": "imgs/favour_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "imgs/my.png",
+        "selectedIconPath": "imgs/my_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

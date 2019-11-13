@@ -1,0 +1,46 @@
+<template name="mainTabCell">
+  <view class="list">
+    <!-- 顶部 -->
+    <view class="title">
+      <image class="head_img" src="{{item.profile_image}}"></image>
+      <view class="left">
+        <text class="name">{{item.name}}</text>
+        <text class="time">{{item.passtime}}</text>
+      </view>
+      <image class="more" src="../../imgs/more.png"></image>
+    </view>
+    <!-- 内容 -->
+    <view class="main">
+      <text class="opinion">{{item.text}}</text>
+      <!-- 视频 -->
+      <video src="{{item.videouri}}" wx:if="{{item.videouri}}"></video>
+      <!-- 大图 -->
+      <image bindtap="clickImg" data-item="{{item}}" lazy-load="{{true}}" class="img" mode = "aspectFit" src="{{item.image0}}" wx:elif="{{item.image0&&(!item.videorui)&(!item.voiceuri)}}"></image>
+      <!-- 声音 -->
+      <audio src="{{item.voiceuri}}" wx:if="{{item.videorui}}"></audio>
+    </view>
+    <!-- 底部 -->
+    <view class="bottom">
+      <!-- 赞 -->
+      <view class="tab">
+        <image src="../../imgs/good.png"></image>
+        <text>{{item.ding}}</text>
+      </view>
+      <!-- 踩 -->
+      <view class="tab">
+        <image src="../../imgs/bad.png"></image>
+        <text>{{item.cai}}</text>
+      </view>
+      <!-- 评论 -->
+      <view class="tab" catchtap="commentTap" data-id="{{item.id}}">
+        <image src="../../imgs/comment.png"></image>
+        <text>{{item.comment}}</text>
+      </view>
+      <!-- 转发 -->
+      <view class="tab">
+        <image src="../../imgs/retransmission.png"></image>
+        <text>转发</text>
+      </view>
+    </view>
+  </view>
+</template>

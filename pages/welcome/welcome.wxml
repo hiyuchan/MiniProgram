@@ -1,0 +1,7 @@
+<!--pages/welcome/welcome.wxml-->
+<view class='container'>
+  <image class="avatar" src='{{userInfo.avatarUrl}}' wx:if="{{!isShow}}"></image>
+  <text class='hello' wx:if="{{!isShow}}">hello,{{userInfo.nickName}}</text>
+  <button wx:if="{{isShow}}" class="yes" plain="true" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">同意并授权</button>
+  <button class="yes" bindtap="goin" plain="true" lang="zh_CN" >开始使用</button>
+</view>

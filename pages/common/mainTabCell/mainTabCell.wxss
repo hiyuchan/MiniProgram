@@ -1,0 +1,80 @@
+/* pages/mainTabCell/mainTabCell.wxss */
+.list{
+  margin: 15rpx 10rpx;
+  padding: 0 15rpx;
+  background: #fff;
+  padding-bottom: 20rpx;
+}
+/* 头部 */
+.title{
+  height: 140rpx;
+  display: flex;
+}
+.head_img{
+  width: 100rpx;
+  height: 100rpx;
+  padding-top: 15rpx;
+}
+.title .left{
+  display: flex;
+  padding-left: 20rpx;
+  flex-direction: column;
+  justify-content: center;
+}
+.title .left .name{
+  font-size: 36rpx;
+}
+.title .left .time{
+  font-size: 28rpx;
+  padding-top: 5rpx;
+  color: #b1b1b1;
+}
+.title .more{
+  position: absolute;
+  right: 30rpx;
+  margin-top:35rpx;
+  width: 70rpx;
+  height: 70rpx;
+}
+/* 内容 */
+.main{
+  font-size: 34rpx;
+  color:#333;
+}
+.main text{
+  line-height: 40rpx;
+  display: block;
+  margin-bottom: 20rpx;
+}
+.main image,.main video, .main audio{
+  max-width: 100%;
+  min-width: 70%;
+  margin: 0 auto;
+  display: block;
+}
+/* 底部 */
+.bottom{
+  display: flex;
+  margin-top: 20rpx;
+  border-top: 1rpx solid #ddd;
+  justify-content: space-around;
+}
+.tab{
+  display: flex;
+  margin-top: 25rpx;
+  align-items: center;
+  overflow: hidden;
+}
+.tab image{
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: bottom;
+}
+.tab text{
+  padding-left: 10rpx;
+  color:#bbb;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  vertical-align: bottom;
+}
