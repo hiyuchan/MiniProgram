@@ -1,0 +1,59 @@
+/* pages/index/comment/comment.wxss */
+page{
+  background: #eee;
+  width: 100%;
+}
+.comment_item{
+  background: #fff;
+  font-size: 36rpx;
+  padding: 20rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.comment_item .top{
+  display: flex;
+  align-items: center;
+  margin: 10rpx 0;
+}
+.top image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+  flex: 1;
+}
+.top .name{
+  color: #2697d4;
+  font-weight: bold;
+  padding-left: 20rpx;
+  flex:6;
+}
+.top .zan{
+  display: flex;
+  flex: 1;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #b1b1b1;
+}
+.top .zan image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 10rpx;
+}
+.comment_item .bottom{
+  display: flex;
+  align-items: top;
+  margin: 10rpx 0;
+}
+.bottom .fans{
+  background: #87cef5;
+  width: 100rpx;
+  height: 40rpx;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+.content{
+  margin-left: 30rpx;
+  width: 90%;
+}

@@ -1,0 +1,17 @@
+<!--pages/common/commentCell/comment.wxml-->
+<template name="commentCell">
+    <view class="comment_item">
+    <view class="top">
+      <image class="head_img" src="{{commentItem.user.profile_image}}"></image>
+      <text class="name">{{commentItem.user.username}}</text>
+      <view class="zan">
+        <text>{{commentItem.like_count}}</text>
+       <image src="../../../imgs/good.png"></image>
+      </view>
+    </view>
+    <view class="bottom">
+      <text class="fans">{{commentItem.user.total_cmt_like_count}}</text>
+      <text class="content">{{commentItem.content}}</text>
+    </view>
+  </view>
+</template>

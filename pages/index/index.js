@@ -1,4 +1,6 @@
 import tempObj from '../common/mainTabCell/mainTabCell'
+
+var timestamp = getApp().timestamp;
 Page({
   data:{
     imgs:[
@@ -56,6 +58,7 @@ Page({
     var that = this;
     //请求百思不得姐的全部数据
     that.requestBS();
+    that.requestQQ();
   },
   //请求百思不得姐的数据
   requestBS(){
@@ -68,6 +71,15 @@ Page({
         });
         wx.hideLoading();
       }
+    })
+  },
+  // 请求QQ音乐数据
+  requestQQ(){
+    wx.request({
+      url: `https://route.showapi.com/213-4?showapi_appid=114344&showapi_timestamp=${timestamp}&topid=5&showapi_sign=f33852f7a1e445f890fc5a2b3c7fd17a`,
+      success:((res)=>{
+        console.log(res.data.showapi_res_body.pagebean.songlist.slice(0,3))
+      })
     })
   },
   // 切换tab类型

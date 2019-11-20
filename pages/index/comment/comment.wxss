@@ -1,1 +1,18 @@
 /* pages/index/comment/comment.wxss */
+@import "../../common/commentCell/commentCell.wxss";
+page{
+  background: #eee;
+  width: 100%;
+}
+.scroll_view{
+  height: 100%;
+}
+.hot{
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.hot .title{
+  display: inline-block;
+  padding: 20rpx 0 20rpx 20rpx;
+  color: #666;
+}

@@ -1,2 +1,17 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class="login">
+  <image src="../../imgs/headImg.png"></image>
+  <text>登录/注册</text>
+  <text class="right_arrow">></text>
+</view>
+<view class="login music">
+  <image src="../../imgs/music.png"></image>
+  <text>切换背景音乐</text>
+  <text class="right_arrow">></text>
+</view>
+<view class="menu_list" >
+  <view class="menu_item"  wx:for="{{menuList}}" wx:key="index">
+    <image src="{{item.icon}}"></image>
+    <text>{{item.name}}</text>
+  </view>
+</view>

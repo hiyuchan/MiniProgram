@@ -1,8 +1,18 @@
 <!--pages/index/comment/comment.wxml-->
-  <view class="title">
-    <view class="left">
-      <image class="head_img" src="{{commentList.user.profile_image}}"></image>
-      <text class="name">{{commentList.user.username}}</text>
-    </view>
-    <!-- <image class="more" src="../../../imgs/more.png"></image> -->
+<import src="../../common/commentCell/commentCell.wxml"/>
+<scroll-view class="scroll_view" scroll-y="{{true}}" bindscrolltolower="scrolltolower">
+  <view class="hot" wx:if="{{showHot}}">
+    <text class="title">最热评论</text>
+    <block wx:for="{{hotList}}" wx:key="index" wx:for-item="hotItem">
+      <template is="commentCell" data="{{commentItem:hotItem}}">
+      </template>
+    </block>
   </view>
+  <view class="hot">
+    <text class="title">最新评论</text>
+    <block wx:for="{{commentList}}" wx:key="index" wx:for-item="commentItem">
+      <template is="commentCell" data="{{commentItem:commentItem}}">
+      </template>
+    </block>
+  </view>
+</scroll-view>

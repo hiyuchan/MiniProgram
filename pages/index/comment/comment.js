@@ -11,18 +11,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '请稍后',
+      mask: true,
+    });
     data_id = options.id;
     wx.request({
-      url: `https://api.budejie.com/api/api_open.php?a=dataList&c=comment&data_id=29873890&hot=1`,
-      success:((res)=>{
+      url: `https://api.budejie.com/api/api_open.php?a=dataList&c=comment&data_id=${data_id}&hot=1`,
+      success: ((res) => {
+        console.log(res.data)
         this.setData({
-          commentList:res.data.data[0],
-        })
-        console.log(this.data.commentList)
+          hotList:res.data.hot,
+          commentList:res.data.data,
+          showHot: res.data.hot.length?true:false,
+        });
+        wx.hideLoading();
       })
     })
   },
-
+  scrolltolower(){
+    console.log("到底啦")
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
