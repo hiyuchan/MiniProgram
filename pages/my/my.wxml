@@ -1,17 +1,22 @@
 <!--pages/my/my.wxml-->
 <view class="login">
   <image src="../../imgs/headImg.png"></image>
-  <text>登录/注册</text>
+  <text class="title">登录/注册</text>
   <text class="right_arrow">></text>
 </view>
 <view class="login music">
-  <image src="../../imgs/music.png"></image>
-  <text>切换背景音乐</text>
-  <text class="right_arrow">></text>
+  <image class="{{isPlay?'play':'paly pause'}}" src="../../imgs/music.png"></image>
+  <text class="title">切换背景音乐</text>
+  <audio></audio>
+  <image bindtap="cutSong" class="right_arrow"src="../../imgs/cutSong.png"></image>
+  <image bindtap="musicStatus" wx:if="{{isPlay}}" class="right_arrow" src="../../imgs/stop.png"></image>
+  <image bindtap="musicStatus" wx:if="{{!isPlay}}" class="right_arrow" src="../../imgs/play.png"></image>
 </view>
 <view class="menu_list" >
-  <view class="menu_item"  wx:for="{{menuList}}" wx:key="index">
-    <image src="{{item.icon}}"></image>
-    <text>{{item.name}}</text>
+  <view class="menu_box">
+    <view class="menu_item"  wx:for="{{menuList}}" wx:key="index">
+      <image src="{{item.icon}}"></image>
+      <text>{{item.name}}</text>
+    </view>
   </view>
 </view>

@@ -47,5 +47,9 @@
       }
     ]
   },
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
   "sitemapLocation": "sitemap.json"
 }
