@@ -1,4 +1,3 @@
-// pages/goods/newsDetail/newsDetail.js
 Page({
 
   /**

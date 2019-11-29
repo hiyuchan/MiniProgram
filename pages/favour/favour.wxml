@@ -1,2 +1,4 @@
-<!--pages/favour/favour.wxml-->
-<text>pages/favour/favour.wxml</text>
+
+<view class="newsList" wx:for="{{headline}}" wx:key="index">
+  <text bindtap="tabTitle" data-url="{{item.href}}">{{item.title}}</text>
+</view>

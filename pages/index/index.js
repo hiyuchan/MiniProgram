@@ -32,7 +32,8 @@ Page({
       },
     ],
     currentType: 1,
-    currentIndex: 0
+    currentIndex: 0,
+    page:2,
   },
   // 传参只能通过data-set 方式，再从target对象获取
   //点击轮播图跳转
@@ -60,6 +61,12 @@ Page({
     that.requestBS();
     that.requestQQ();
   },
+  onShow(){
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
+    })
+  },
   //请求百思不得姐的数据
   requestBS(){
     var that = this;
@@ -84,6 +91,7 @@ Page({
   },
   // 切换tab类型
   tabTap(e){
+  
     this.setData({
       currentType: e.target.dataset.type,
       currentIndex: e.target.dataset.index,
@@ -92,5 +100,21 @@ Page({
       title: '加载中',
     })
     this.requestBS();
-  }
+  },
+  // 下拉刷新
+  bindscrolltolower() {
+    wx.request({
+      url: 'https://api.budejie.com/api/api_open.php?a=list&c=data&type=' + that.data.currentType + '&page=' + this.data.page,
+      success: ((res) => {
+        console.log(res)
+        this.setData({
+          list: this.data.list.concat(res.data.list),
+          page: this.data.page + 1
+        });
+        if (!(res.data.list.length)) {
+          console.log("到底了")
+        }
+      }),
+    });
+  },
 })

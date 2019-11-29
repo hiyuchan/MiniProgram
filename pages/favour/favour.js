@@ -1,66 +1,35 @@
-// pages/favour/favour.js
+// pages/goods/goods.js
+var now = new Date();
+var timestamp = String(now.getFullYear()) + String(now.getMonth() + 1) + now.getDate() + now.getHours() + now.getMinutes() + now.getSeconds();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    headline: [],
+    newsList: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.request({
+      url: `https://route.showapi.com/967-1?showapi_appid=114344&showapi_timestamp=${timestamp}&showapi_sign=f33852f7a1e445f890fc5a2b3c7fd17a`,
+      success: ((res) => {
+        console.log(res)
+        this.setData({
+          headline: res.data.showapi_res_body.Headline,
+        })
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  tabTitle(e) {
+    console.log(e.target.dataset.url)
+    var href = e.target.dataset.url;
+    wx.navigateTo({
+      url: './newsDetail/newsDetail?href=' + href,
+    })
   }
 })

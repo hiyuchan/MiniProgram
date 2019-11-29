@@ -1,0 +1,12 @@
+<template name="goodsRight" >
+  <view class="right_item"  wx:for="{{rightList}}" wx:key="{{index}}">
+    <image class="header" src="{{item.header}}"></image>
+    <view class="info">
+      <view class="name">{{item.screen_name}}</view>
+      <text class="fans">{{item.fans_count}}人关注</text>
+    </view>
+    <button wx:if="{{!(item.isAtte)}}" class="attr" catchtap="addAtte" data-item="{{item}}">
+       +关注
+    </button>
+  </view>
+</template>

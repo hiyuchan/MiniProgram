@@ -1,0 +1,39 @@
+page{
+  height: 100%;
+}
+.right_item{
+  width: 100%;
+  height: 160rpx;
+  border-bottom: 1rpx solid #ddd;
+  display: flex;
+  position: relative;
+}
+.right_item .header{
+  display: block;
+  width: 130rpx;
+  height: 130rpx;
+  margin: 15rpx;
+}
+.name{
+  font-size:34rpx;
+  height: 80rpx;
+  line-height: 100rpx;
+}
+.fans{
+  font-size: 30rpx;
+  color: #999;
+}
+.attr{
+  position: absolute;
+  top: 60rpx;
+  right: 10rpx;
+  overflow: auto;
+  width: 130rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border:1rpx solid #ddd;
+  border-radius: 15rpx;
+  font-size: 26rpx;
+  color: red;
+  text-align: center;
+}

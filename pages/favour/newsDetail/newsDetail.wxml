@@ -1,0 +1,2 @@
+<!--pages/favour/newsDetail/newsDetail.wxml-->
+<web-view src="{{href}}"></web-view>

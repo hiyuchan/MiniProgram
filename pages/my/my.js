@@ -10,7 +10,7 @@ Page({
     musicList:[
       { url: "https://webfs.yun.kugou.com/201911211425/bbca44ac7012fabf4b22c6522e6f1683/G013/M03/0C/1D/TQ0DAFUOvd6APXf5ADb1EVEwIEg420.mp3",title:"《吴哥窟》"},
       { url: "https://webfs.yun.kugou.com/201911211427/c4caf1cfc81b66b424a179929f736e1e/G015/M03/05/15/Tw0DAFUZ3saAPu93AD9HDtR9p10828.mp3",title:"《我本人》"},
-      { url:     "https://webfs.yun.kugou.com/201911211426/8fcbae160824097392f886482aa9dbdf/G007/M00/19/04/Rw0DAFUHD_SAe8WeAEBJIwNLLmk839.mp3",title:"《生命树》"}
+      { url:     "https://webfs.yun.kugou.com/201911231103/e26ad8747f8bedcf31ba13ae12ef6154/G007/M00/19/04/Rw0DAFUHD_SAe8WeAEBJIwNLLmk839.mp3",title:"《生命树》"}
     ],
     isPlay:'',
   },
@@ -40,6 +40,15 @@ Page({
       this.setData({
         isPlay: false,
       })
+    });
+    // 监听音乐停止
+    wx.onBackgroundAudioStop(()=>{
+      this.setData({
+        isPlay: false,
+      });
+      setTimeout(()=>{
+        this.cutSong();
+      },1000)
     })
   },
   playSong(){

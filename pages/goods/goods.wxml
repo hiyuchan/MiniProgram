@@ -1,4 +1,10 @@
 <!--pages/goods/goods.wxml-->
-<view class="newsList" wx:for="{{headline}}" wx:key="index">
-  <text bindtap="tabTitle" data-url="{{item.href}}">{{item.title}}</text>
-</view>
+<import src="../common/goodsLeft/goodsLeft.wxml"/>
+<import src="../common/goodsRight/goodsRight.wxml"/>
+<scroll-view class="left" scroll-y="{{true}}">
+  <template is="goodsLeft" data="{{leftList, tabChange, currentIndex}}"></template>
+</scroll-view>
+<scroll-view class="right" scroll-y="{{true}}" bindscrolltolower="bindscrolltolower">
+  <template is="goodsRight" data="{{rightList:rightList,addAtte:addAtte}}"></template>
+</scroll-view>
+

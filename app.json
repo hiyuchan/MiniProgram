@@ -1,13 +1,13 @@
 {
   "pages": [
+    "pages/goods/goods",
     "pages/my/my",
     "pages/index/index",
-    "pages/goods/goods",
     "pages/welcome/welcome",
     "pages/favour/favour",
     "pages/index/link/link",
     "pages/index/comment/comment",
-    "pages/goods/newsDetail/newsDetail"
+    "pages/favour/newsDetail/newsDetail"
   ],
   "window": {
     "navigationBarTitleText": "snail",

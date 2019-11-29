@@ -1,0 +1,5 @@
+<template name="goodsLeft" >
+  <view wx:for="{{leftList}}" wx:key="{{index}}" class="{{currentIndex==item.id?'item active':'item'}}" data-id="{{item.id}}" bindtap="tabChange">
+    <text>{{item.name}}</text>
+  </view>
+</template>
