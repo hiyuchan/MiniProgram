@@ -29,15 +29,15 @@
       },
       {
         "pagePath": "pages/goods/goods",
-        "text": "关注",
-        "iconPath": "imgs/atten.png",
-        "selectedIconPath": "imgs/atten_active.png"
+        "text": "推荐关注",
+        "iconPath": "imgs/favour.png",
+        "selectedIconPath": "imgs/favour_active.png"
       },
       {
         "pagePath": "pages/favour/favour",
-        "text": "收藏",
-        "iconPath": "imgs/favour.png",
-        "selectedIconPath": "imgs/favour_active.png"
+        "text": "我的关注",
+        "iconPath": "imgs/atten.png",
+        "selectedIconPath": "imgs/atten_active.png"
       },
       {
         "pagePath": "pages/my/my",

@@ -1,4 +1,5 @@
+<import src="../common/goodsRight/goodsRight.wxml"/>
 
-<view class="newsList" wx:for="{{headline}}" wx:key="index">
-  <text bindtap="tabTitle" data-url="{{item.href}}">{{item.title}}</text>
-</view>
+<scroll-view class="right" scroll-y="{{true}}" bindscrolltolower="bindscrolltolower">
+  <template is="goodsRight" data="{{rightList:atteList}}"></template>
+</scroll-view>

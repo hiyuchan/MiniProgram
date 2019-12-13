@@ -1,4 +1,5 @@
 @import "../common/mainTabCell/mainTabCell.wxss";
+@import "../components/loading/loading.wxss";
 
 page{
   width: 100%;
@@ -25,6 +26,10 @@ page{
 swiper-item image{
   position: relative;
   top: 85rpx;
+  width: 100%;
+  height: 100%;
+}
+.scroll{
   width: 100%;
   height: 100%;
 }

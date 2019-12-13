@@ -16,6 +16,7 @@ Page({
    */
   onLoad: function (options) {
     this.requestLeft();
+    console.log(wx.getStorageSync("atteList"))
   },
   tabChange(e){
     this.setData({
@@ -29,7 +30,6 @@ Page({
     wx.request({
       url: 'https://api.budejie.com/api/api_open.php?a=list&c=subscribe&category_id=' + this.data.currentIndex,
       success: ((res) => {
-        console.log("haunle")
         res.data.list.forEach((el)=>{
           el.isAtte = false;
         });
@@ -70,7 +70,6 @@ Page({
   },
   // 加关注
   addAtte(e){
-    console.log(e.target.dataset.item)
     e.target.dataset.item.isAtte = true;
     console.log(e.target.dataset.item);
     var { uid, header, screen_name, fans_count } = e.target.dataset.item;
@@ -81,6 +80,5 @@ Page({
       title: '已关注',
       duration: 2000
     });
-    console.log(wx.getStorageSync("atteList"))
   }
 })

@@ -74,7 +74,8 @@ Page({
       url: 'https://api.budejie.com/api/api_open.php?a=list&c=data&type='+that.data.currentType,
       success: function (res) {
         that.setData({
-          list: res.data.list
+          list: res.data.list,
+          maxtime:res.data.info.maxtime,
         });
         wx.hideLoading();
       }
@@ -104,12 +105,13 @@ Page({
   // 下拉刷新
   bindscrolltolower() {
     wx.request({
-      url: 'https://api.budejie.com/api/api_open.php?a=list&c=data&type=' + that.data.currentType + '&page=' + this.data.page,
+      url: 'https://api.budejie.com/api/api_open.php?a=list&c=data&type=' + this.data.currentType + '&page=' + this.data.page + '&maxtime='+this.data.maxtime,
       success: ((res) => {
         console.log(res)
         this.setData({
           list: this.data.list.concat(res.data.list),
-          page: this.data.page + 1
+          page: this.data.page + 1,
+          maxtime: res.data.info.maxtime,
         });
         if (!(res.data.list.length)) {
           console.log("到底了")
